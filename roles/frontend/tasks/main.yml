@@ -1,21 +1,21 @@
 - name: Install Nginx
   ansible.builtin.yum:
-   name: httpd
-   state: installed
-   
-- name: Remove Old http Documents
+    name: nginx
+    state: installed
+
+- name: Remove old HTTP Documents
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
 
-- name: Create HTTp Document Directory
+- name: Create HTTP Document Directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: directory
 
-- name: Download Frontend Content
-  ansible.builtin.unarcheive:
-   src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-   dest: /usr/share/nginx/html
-   remote_src: yes
+- name: Download frontend App content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
    
