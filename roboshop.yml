@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 - name: Roboshop setup
   hosts: all
   roles:
      - "{{ROLE_NAME}}"
+=======
+- name:  Roboshop Setup
+  hosts: all
+  roles: 
+      -  "{{ ROLE_NAME }}"
+  
+>>>>>>> b58043f32f31d2d2c3f805205a0b98e1021bf489

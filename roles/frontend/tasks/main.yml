@@ -1,4 +1,27 @@
+<<<<<<< HEAD
 - name: Test
   ansible.builtin.debug:
     msg: Hello from frontend
     
+=======
+- name: Install Nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
+
+- name: Remove old HTTP Documents
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+#- name: Create HTTP Document Directory
+ # ansible.builtin.file:
+  #  path: /usr/share/nginx/html
+   # state: directory
+
+#- name: Download frontend App content
+  #ansible.builtin.unarchive:
+   # src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    #dest: /usr/share/nginx/html
+    #remote_src: yes
+>>>>>>> b58043f32f31d2d2c3f805205a0b98e1021bf489
